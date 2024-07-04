@@ -3,31 +3,19 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://unpkg.com/@tonconnect/ui@latest/dist/tonconnect-ui.min.js"></script>
     <title>Document</title>
 </head>
 <body>
     <div id="ton-connect"></div>
+    <script>
+        const tonConnectUI = new TON_CONNECT_UI.TonConnectUI({
+            manifestUrl: 'http://127.0.0.1:5500/tonconnect-manifest.json',
+            buttonRootId: 'ton-connect'
+        });
+        tonConnectUI.uiOptions = {
+            twaReturnUrl: 'http://127.0.0.1:5500/index.html'
+        };
+    </script>
 </body>
-<script src="https://unpkg.com/@tonconnect/ui@latest/dist/tonconnect-ui.min.js"></script>
-<script>
-    const tonConnectUI = new TON_CONNECT_UI.TonConnectUI({
-        manifestUrl: 'https://byte-develop.github.io/ton/tonconnect-manifest.json',
-        buttonRootId: 'ton-connect'
-    });
-</script>
-<script>
-    async function connectToWallet() {
-        const connectedWallet = await tonConnectUI.connectWallet();
-        // Do something with connectedWallet if needed
-        console.log(connectedWallet);
-    }
-
-    // Call the function
-    connectToWallet().catch(error => {
-        console.error("Error connecting to wallet:", error);
-    });
-    tonConnectUI.uiOptions = {
-      twaReturnUrl: 'https://byte-develop.github.io/ton/'
-    };
-</script>
 </html>
