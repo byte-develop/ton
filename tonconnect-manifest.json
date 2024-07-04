@@ -1,5 +1,5 @@
 {
-    "url": "http://localhost:5500",
+    "url": "https://byte-develop.github.io/ton/",
     "name": "MYAPP",
-    "iconUrl": "http://localhost:5500/ton_symbol.png"
+    "iconUrl": "https://byte-develop.github.io/ton/ton_symbol.png"
 }
